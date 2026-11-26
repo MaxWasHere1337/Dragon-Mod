@@ -1,10 +1,12 @@
 name: Release
 
-# Pushing a tag like v0.1.0-alpha builds the add-on and publishes it as a
-# GitHub release with DragonMod.mcaddon attached.
+# Changing the VERSION file publishes a GitHub release with that name and
+# DragonMod.mcaddon attached. Names containing "alpha" or "beta" are marked
+# as pre-releases.
 on:
   push:
-    tags: [ "v*" ]
+    paths: [ "VERSION" ]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,8 +25,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          tag="$(tr -d '[:space:]' < VERSION)"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists, nothing to do."
+            exit 0
+          fi
           flags=""
-          case "$GITHUB_REF_NAME" in *alpha*|*beta*) flags="--prerelease" ;; esac
-          gh release create "$GITHUB_REF_NAME" dist/DragonMod.mcaddon \
-            --title "Dragon Mod $GITHUB_REF_NAME" \
+          case "$tag" in *alpha*|*beta*) flags="--prerelease" ;; esac
+          gh release create "$tag" dist/DragonMod.mcaddon \
+            --target "$GITHUB_SHA" \
+            --title "Dragon Mod $tag" \
             --notes-file RELEASE_NOTES.md $flags
