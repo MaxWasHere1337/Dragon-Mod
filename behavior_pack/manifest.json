@@ -1,0 +1,39 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Dragon Mod (Behavior)",
+    "description": "Tame, raise and ride dragons. Made for Madeline.",
+    "uuid": "258749d5-51c7-4923-96c9-773ef8331b75",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      90
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "4c4bee14-fa0e-40be-8ae2-ee2f741be3fd",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "69af3c7b-5625-4e19-b5e1-ec4ce823c155",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

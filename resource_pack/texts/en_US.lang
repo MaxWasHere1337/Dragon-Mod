@@ -1,0 +1,5 @@
+entity.dragonmod:forest_dragon.name=Forest Dragon
+entity.dragonmod:forest_dragon_egg.name=Forest Dragon Egg
+item.spawn_egg.entity.dragonmod:forest_dragon.name=Forest Dragon Spawn Egg
+item.spawn_egg.entity.dragonmod:forest_dragon_egg.name=Forest Dragon Egg
+action.interact.dragonmod.warm_egg=Warm Egg

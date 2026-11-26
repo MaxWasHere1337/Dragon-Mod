@@ -1,0 +1,16 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "dragonmod:forest_dragon": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.1 ],
+        "events": {
+          "ambient": "mob.sniffer.idle",
+          "hurt": "mob.sniffer.hurt",
+          "death": "mob.sniffer.death",
+          "step": "mob.sniffer.step"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dragonmod:forest_dragon_egg",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/dragonmod/forest_dragon_egg" },
+      "geometry": { "default": "geometry.dragonmod.dragon_egg" },
+      "animations": { "wobble": "animation.dragonmod.dragon_egg.wobble" },
+      "scripts": { "animate": [ { "wobble": "query.is_shaking" } ] },
+      "render_controllers": [ "controller.render.dragonmod.dragon_egg" ],
+      "spawn_egg": { "base_color": "#e8e2c0", "overlay_color": "#3c8c3a" }
+    }
+  }
+}

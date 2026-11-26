@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dragonmod:forest_dragon",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/dragonmod/forest_dragon" },
+      "geometry": { "default": "geometry.dragonmod.dragon" },
+      "animations": {
+        "look_at_target": "animation.dragonmod.dragon.look_at_target",
+        "walk": "animation.dragonmod.dragon.walk",
+        "idle": "animation.dragonmod.dragon.idle",
+        "wings_folded": "animation.dragonmod.dragon.wings_folded",
+        "wings_flap": "animation.dragonmod.dragon.wings_flap",
+        "wings": "controller.animation.dragonmod.dragon.wings"
+      },
+      "scripts": {
+        "animate": [ "look_at_target", "idle", { "walk": "query.modified_move_speed" }, "wings" ]
+      },
+      "render_controllers": [ "controller.render.dragonmod.dragon" ],
+      "spawn_egg": { "base_color": "#3c8c3a", "overlay_color": "#e8d98a" }
+    }
+  }
+}

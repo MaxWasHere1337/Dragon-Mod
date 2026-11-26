@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dragonmod.dragon.wings": {
+      "initial_state": "ground",
+      "states": {
+        "ground": {
+          "animations": [ "wings_folded" ],
+          "transitions": [ { "air": "!query.is_on_ground" } ],
+          "blend_transition": 0.3
+        },
+        "air": {
+          "animations": [ "wings_flap" ],
+          "transitions": [ { "ground": "query.is_on_ground" } ],
+          "blend_transition": 0.3
+        }
+      }
+    }
+  }
+}

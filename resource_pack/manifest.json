@@ -1,0 +1,39 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Dragon Mod (Resources)",
+    "description": "Tame, raise and ride dragons. Made for Madeline.",
+    "uuid": "69af3c7b-5625-4e19-b5e1-ec4ce823c155",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      90
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "a13032b6-679e-4fe4-9e9a-22772de0eebb",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "258749d5-51c7-4923-96c9-773ef8331b75",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dragonmod:forest_dragon_egg",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": { "family": [ "dragon_egg", "inanimate" ] },
+      "minecraft:collision_box": { "width": 0.6, "height": 0.7 },
+      "minecraft:health": { "value": 8, "max": 8 },
+      "minecraft:physics": {},
+      "minecraft:persistent": {},
+      "minecraft:knockback_resistance": { "value": 1.0 },
+      "minecraft:pushable": { "is_pushable": false, "is_pushable_by_piston": true },
+      "minecraft:damage_sensor": {
+        "triggers": [ { "cause": "fall", "deals_damage": "no" } ]
+      }
+    },
+    "component_groups": {
+      "dragonmod:resting": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": { "test": "is_family", "subject": "other", "value": "player" },
+                "event": "dragonmod:start_hatching",
+                "target": "self"
+              },
+              "swing": true,
+              "interact_text": "action.interact.dragonmod.warm_egg"
+            }
+          ]
+        }
+      },
+      "dragonmod:hatching": {
+        "minecraft:is_shaking": {},
+        "minecraft:timer": {
+          "looping": false,
+          "time": 30,
+          "time_down_event": { "event": "dragonmod:hatch", "target": "self" }
+        }
+      },
+      "dragonmod:hatch": {
+        "minecraft:transformation": {
+          "into": "dragonmod:forest_dragon<dragonmod:hatched>",
+          "delay": { "value": 0 }
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": { "component_groups": [ "dragonmod:resting" ] }
+      },
+      "dragonmod:start_hatching": {
+        "remove": { "component_groups": [ "dragonmod:resting" ] },
+        "add": { "component_groups": [ "dragonmod:hatching" ] }
+      },
+      "dragonmod:hatch": {
+        "remove": { "component_groups": [ "dragonmod:hatching" ] },
+        "add": { "component_groups": [ "dragonmod:hatch" ] }
+      }
+    }
+  }
+}
